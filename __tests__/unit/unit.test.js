@@ -10,4 +10,10 @@ describe("basic unit test", () => {
 
     expect(sum).not.toBe(1);
   });
+
+  it(`should expect the sum of 1+1 not to be 3`, async () => {
+    const sum = 1 + 1;
+
+    expect(sum).not.toBe(3);
+  });
 });
