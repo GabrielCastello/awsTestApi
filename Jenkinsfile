@@ -9,4 +9,7 @@ node {
        sh 'npm test'
      }
    }  
+   stage('deploy') {
+       sh 'docker-compose up --build'
+   }  
 }
