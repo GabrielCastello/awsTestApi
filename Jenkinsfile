@@ -4,7 +4,7 @@ node {
      checkout scm
    }
    stage('test') {
-     nodejs(nodeJSInstallationName: 'nodejs') {
+     nodejs(nodeJSInstallationName: 'NodeJS') {
        sh 'npm install --only=dev'
        sh 'npm test'
      }
