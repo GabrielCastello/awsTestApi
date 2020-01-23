@@ -16,7 +16,8 @@ node {
       def app = docker.build("g4br13l/docker-node-sample-api:${commit_id}", '.').push()
     }
   }
-  //  stage('deploy') {
-  //      sh 'docker-compose up --build'
-  //  }  
+   stage('deploy and run') {
+       sh "docker pull 127.0.0.1:50001/g4br13l/docker-node-sample-api:${commit_id}"
+       sh "docker run -d -p 50005:3000 127.0.0.1:50001/g4br13l/docker-node-sample-api:${commit_id}"
+   }  
 }
